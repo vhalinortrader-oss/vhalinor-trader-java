@@ -1,6 +1,6 @@
-# ai_core — Project Memory
+# src — Project Memory
 
-> Auto-synced | 157 observations
+> Auto-synced | 126 observations
 
 ## 🏛️ CORE ARCHITECTURE
 
@@ -24,14 +24,6 @@ Example:
 
 > Always read `.cursor/active-context.md` for exact instructions on the specific file you are currently editing. It updates dynamically.
 
-## 🔴 STOP — READ THESE FIRST
-
-- **Agent: follow existing project patterns — don't introduce a different style** — Agent: follow existing project patterns — don't introduce a different style
-- **Agent: don't generate code with "any" type — define proper TypeScript types** — Agent: don't generate code with "any" type — define proper TypeScript types
-- **Agent: always handle loading/error states — don't just render data** — Agent: always handle loading/error states — don't just render data
-- **Agent: don't use deprecated APIs — check library version, use current API** — Agent: don't use deprecated APIs — check library version, use current API
-- **Agent: check existing code before creating utility functions — avoid duplicates** — Agent: check existing code before creating utility functions — avoid duplicates
-
 ## 📐 Conventions
 
 - Version your API from day 1 (/api/v1/)
@@ -53,4 +45,4 @@ Example:
 > ℹ️ DO NOT call sys_core_14() or sys_core_08() at startup — context above IS your context.
 
 ---
-*Auto-synced | 2026-05-18*
+*Auto-synced | 2026-05-05*

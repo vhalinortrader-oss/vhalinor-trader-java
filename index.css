@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+/* CSS Custom Properties for VHALINOR TRADER */
+:root {
+  --vhalinor-primary: #00c8ff;
+  --vhalinor-secondary: #764ba2;
+  --vhalinor-accent: #667eea;
+  --vhalinor-success: #10b981;
+  --vhalinor-warning: #f59e0b;
+  --vhalinor-error: #ef4444;
+  --vhalinor-dark: #050505;
+  --vhalinor-dark-secondary: #0a0a0a;
+  --vhalinor-gray: #262626;
+  --vhalinor-gray-light: #404040;
+  --vhalinor-text: #e5e5e5;
+  --vhalinor-text-secondary: #a1a1aa;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: #050505;
+  color: #e5e5e5;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Enhanced Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--vhalinor-dark-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--vhalinor-gray);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vhalinor-gray-light);
+}
+::-webkit-scrollbar-corner {
+  background: var(--vhalinor-dark-secondary);
+}
+
+/* Firefox scrollbar */
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--vhalinor-gray) var(--vhalinor-dark-secondary);
+  }
+}
+
+/* Legacy scrollbar fallback */
+@supports not (scrollbar-width: thin) {
+  * {
+    scrollbar-face-color: var(--vhalinor-gray);
+    scrollbar-track-color: var(--vhalinor-dark-secondary);
+    scrollbar-arrow-color: var(--vhalinor-gray);
+  }
+}
+
+/* VHALINOR TRADER Enhanced Custom Styles */
+.vhalinor-gradient {
+  background: linear-gradient(135deg, var(--vhalinor-accent) 0%, var(--vhalinor-secondary) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.vhalinor-card {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05) linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vhalinor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vhalinor-primary), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vhalinor-card:hover::before {
+  opacity: 1;
+}
+
+.vhalinor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 200, 255, 0.2);
+  border-color: rgba(0, 200, 255, 0.3);
+}
+
+.vhalinor-glow {
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.5);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 200, 255, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(0, 200, 255, 0.8); }
+}
+
+.vhalinor-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.vhalinor-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Enhanced Chart Customizations */
+.recharts-wrapper {
+  background: transparent !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.recharts-tooltip-wrapper {
+  background: rgba(5, 5, 5, 0.95) !important;
+  background: rgba(5, 5, 5, 0.95) linear-gradient(rgba(5, 5, 5, 0.95), rgba(10, 10, 10, 0.95)) !important;
+  border: 1px solid var(--vhalinor-primary) !important;
+  border-radius: 8px !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  font-family: var(--font-sans) !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--vhalinor-primary) !important;
+  font-weight: 600 !important;
+  margin-bottom: 4px !important;
+}
+
+.recharts-tooltip-item {
+  color: var(--vhalinor-text) !important;
+  font-size: 12px !important;
+}
+
+.recharts-curve {
+  stroke-width: 2;
+}
+
+.recharts-dot {
+  r: 4;
+  stroke-width: 2;
+}
+
+/* Enhanced Loading Animations */
+.vhalinor-loading {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 200, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--vhalinor-primary);
+  animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  position: relative;
+}
+
+.vhalinor-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--vhalinor-primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.vhalinor-loading-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.vhalinor-loading-dots span {
+  width: 8px;
+  height: 8px;
+  background: var(--vhalinor-primary);
+  border-radius: 50%;
+  animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.vhalinor-loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.vhalinor-loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+.vhalinor-loading-dots span:nth-child(3) { animation-delay: 0; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Enhanced Status Indicators */
+.vhalinor-status {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.vhalinor-status-online {
+  background: var(--vhalinor-success);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.vhalinor-status-offline {
+  background: var(--vhalinor-error);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.vhalinor-status-warning {
+  background: var(--vhalinor-warning);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.vhalinor-status::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.3;
+  animation: statusRipple 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes statusRipple {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .vhalinor-mobile-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(31, 41, 55, 0.95);
+    background: rgba(31, 41, 55, 0.95) linear-gradient(rgba(31, 41, 55, 0.95), rgba(41, 51, 65, 0.95));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(75, 85, 99, 0.3);
+  }
+}
+
+/* Dark mode support */
+.dark {
+  background-color: #050505;
+  color: #e5e5e5;
+}
+
+.dark .vhalinor-card {
+  background: rgba(31, 41, 55, 0.5);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+/* Light mode support */
+.light {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.light .vhalinor-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+/* Enhanced Performance Optimizations */
+.vhalinor-optimized-scroll {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+/* iOS touch scrolling fallback */
+@supports (-webkit-overflow-scrolling: touch) {
+  .vhalinor-optimized-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.vhalinor-gpu-accelerated {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+/* Additional VHALINOR TRADER Styles */
+.vhalinor-button {
+  background: linear-gradient(135deg, var(--vhalinor-primary), var(--vhalinor-accent));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vhalinor-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.vhalinor-button:hover::before {
+  left: 100%;
+}
+
+.vhalinor-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 200, 255, 0.3);
+}
+
+.vhalinor-input {
+  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05) linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--vhalinor-text);
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.vhalinor-input:focus {
+  outline: none;
+  border-color: var(--vhalinor-primary);
+  box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.1);
+}
+
+.vhalinor-input::placeholder {
+  color: var(--vhalinor-text-secondary);
+}
+
+/* Trading specific styles */
+.vhalinor-profit {
+  color: var(--vhalinor-success);
+  font-weight: 600;
+}
+
+.vhalinor-loss {
+  color: var(--vhalinor-error);
+  font-weight: 600;
+}
+
+.vhalinor-neutral {
+  color: var(--vhalinor-text-secondary);
+  font-weight: 600;
+}
+
+/* Grid layouts */
+.vhalinor-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.vhalinor-grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.vhalinor-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.vhalinor-grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.vhalinor-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 768px) {
+  .vhalinor-grid-cols-2,
+  .vhalinor-grid-cols-3,
+  .vhalinor-grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .vhalinor-grid-cols-3,
+  .vhalinor-grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

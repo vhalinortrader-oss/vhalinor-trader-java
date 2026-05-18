@@ -1,0 +1,14 @@
+mai. 05, 2026 7:50:14 PM com.vhalinor.analyzer.EnhancedAIAnalyzer <init>
+INFORMAÇÕES: Sistema avançado de análise de IA inicializado
+mai. 05, 2026 7:50:15 PM com.vhalinor.analyzer.EnhancedAIAnalyzer analyzeMarketData
+GRAVE: Error during SENTIMENT_ANALYSIS analysis
+java.lang.UnsupportedOperationException
+	at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:142)
+	at java.base/java.util.ImmutableCollections$AbstractImmutableList.set(ImmutableCollections.java:260)
+	at java.base/java.util.Collections.swap(Collections.java:501)
+	at java.base/java.util.Collections.shuffle(Collections.java:462)
+	at com.vhalinor.analyzer.EnhancedAIAnalyzer.generateSentimentKeywords(EnhancedAIAnalyzer.java:246)
+	at com.vhalinor.analyzer.EnhancedAIAnalyzer.sentimentAnalysis(EnhancedAIAnalyzer.java:233)
+	at com.vhalinor.analyzer.EnhancedAIAnalyzer.analyzeMarketData(EnhancedAIAnalyzer.java:425)
+	at com.vhalinor.analyzer.EnhancedAIAnalyzer.main(EnhancedAIAnalyzer.java:552)
+
