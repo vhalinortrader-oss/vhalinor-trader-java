@@ -1,0 +1,26 @@
+br.com.vhalinor.iag
+├── core
+│   ├── BrainNeuron.java
+│   ├── Synapse.java
+│   ├── DataPacket.java
+│   ├── NeuronType.java
+│   ├── BrainState.java
+│   └── DataPriority.java
+├── integration
+│   ├── IntegrationHub.java
+│   ├── ModuleDiscovery.java
+│   └── DataBridge.java
+├── persistence
+│   ├── PersistenceSystem.java
+│   └── Checkpoint.java
+├── monitoring
+│   ├── MonitoringSystem.java
+│   └── MetricsCollector.java
+├── orchestration
+│   ├── DistributedOrchestrator.java
+│   └── AdaptiveOptimizationEngine.java
+├── ml
+│   └── MLModuleBridge.java
+├── quantum
+│   └── QuantumSimulator.java
+└── VhalinorOrchestrator.java
